@@ -1,0 +1,31 @@
+Name: Chancellery Building
+
+Number: 330
+
+# Model Data
+
+Model: Landmarks/Buildings/330/330
+
+Texture: Landmarks/Buildings/330/tex
+
+WorldPos: -12.30204, 0, -22.05223
+
+LatLong: -32.0660443389765, 115.836040014052
+
+Y: 0
+
+Rotation: 270, 0, 0
+
+Scale: 4, 4, 4
+
+
+# Nav Data
+
+Entrance: -32.066055, 115.835432
+
+
+# if there is a lat long, it must have a y value also
+
+# WorldPos is required, if it is not available
+
+# LatLong AND Y are required

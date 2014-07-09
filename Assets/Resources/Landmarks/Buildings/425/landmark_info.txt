@@ -1,0 +1,9 @@
+Name: Senate Building
+Number: 425
+Entrance: -32.065921, 115.834611
+
+Model: Landmarks/Buildings/425/425
+Texture: Landmarks/Buildings/425/tex
+WorldPos: -0.3357923, 0, -22.92518
+Rotation: 270, 0, 0
+Scale: 0.5, 0.5, 0.5

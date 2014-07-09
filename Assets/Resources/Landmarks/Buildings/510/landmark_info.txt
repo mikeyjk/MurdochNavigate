@@ -1,0 +1,10 @@
+Name: Child Care Centre
+Number: 510
+
+Entrance: -32.066232, 115.832036
+
+Model: Landmarks/Buildings/510/510
+Texture: Landmarks/Buildings/510/tex
+WorldPos: 17.7612, 0, -20.9267
+Rotation: 270, 0, 0
+Scale: 0.2, 0.2, 0.2

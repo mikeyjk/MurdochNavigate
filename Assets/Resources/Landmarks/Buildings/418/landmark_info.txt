@@ -1,0 +1,9 @@
+Name: Tavern
+Number: 418
+Entrance: -32.065638, 115.834615
+
+Model: Landmarks/Buildings/418/418
+Texture: Landmarks/Buildings/418/tex
+WorldPos: -2.340908, 0, -28.57779
+Rotation: 270, 0, 0
+Scale: 1, 1, 1

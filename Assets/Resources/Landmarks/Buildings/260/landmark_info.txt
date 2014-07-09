@@ -1,0 +1,9 @@
+Name: Veterinary Clinical Sciences Building 
+Alias: VCS
+Entrance: -32.068449, 115.837010
+
+Model: Landmarks/Buildings/260/260
+Texture: Landmarks/Buildings/260/tex
+WorldPos: -23.16516, 0, -1.388536
+Rotation: 270, 0, 0
+Scale: 0.25, 0.8, 0.25

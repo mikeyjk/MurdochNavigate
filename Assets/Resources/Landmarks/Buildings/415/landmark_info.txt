@@ -1,0 +1,9 @@
+Name: Gymnasium 
+Alias: Gym
+Number: 415
+Entrance: -32.065551, 115.833985
+
+Model: Landmarks/Buildings/415/415
+Texture: Landmarks/Buildings/415/tex
+WorldPos: 28.5, -0.1, -16.9
+Scale: 0.7, 0.8, 0.7

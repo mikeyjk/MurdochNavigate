@@ -1,0 +1,17 @@
+Name: Science and Computing Building
+Alias: SC
+Number: 245
+
+Model: Landmarks/Buildings/245sc/245
+Texture: Landmarks/Buildings/245sc/tex
+WorldPos: -15.31998, 2.5, -18.87612
+LatLong: -32.0667382480035, 115.837050684815
+Y: 0
+Rotation: 0, 180, 180
+Scale: 1.5, 2, 1.5
+
+Entrance: -32.066923, 115.836960
+
+# if there is a lat long, it must have a y value also
+# WorldPos is required, if it is not available
+# LatLong AND Y are required

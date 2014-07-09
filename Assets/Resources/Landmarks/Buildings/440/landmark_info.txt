@@ -1,0 +1,10 @@
+Name: Social Sciences Building 
+Alias: SS
+Number: 440
+Model: Landmarks/Buildings/440/440
+Texture: Landmarks/Buildings/440/tex
+WorldPos: -1.27, 0.62, -16.19
+Rotation: 0, 90, 0
+Scale: 4.21, 4.19, 4.6
+
+Entrance: -32.066873, 115.833672

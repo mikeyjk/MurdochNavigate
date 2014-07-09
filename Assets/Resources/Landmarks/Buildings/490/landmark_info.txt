@@ -1,0 +1,9 @@
+Name: Student Amenities Building
+Alias: Amen
+Number: 490
+Entrance: -32.068753, 115.834014
+
+Model: Landmarks/Buildings/490/490
+Texture: Landmarks/Buildings/490/tex
+WorldPos: 52.01753, 0, 15.81784
+Scale: 1.2, 1, 1

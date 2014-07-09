@@ -1,0 +1,10 @@
+Name: Law Building 
+Alias: Law
+Number: 465
+Entrance: -32.067757, 115.833430
+
+Model: Landmarks/Buildings/465/465
+Texture: Landmarks/Buildings/465/tex
+WorldPos: 4.01537, 1.6, -7.189472
+Rotation: 270, 0, 0
+Scale: 1.1, 1.1, 2

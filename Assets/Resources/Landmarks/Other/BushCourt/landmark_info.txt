@@ -1,0 +1,12 @@
+Name: Bush Court
+Model: Landmarks/Other/BushCourt/BushCourt
+Texture: Landmarks/Other/BushCourt/tex
+WorldPos: -4.61, 0.1, -20.41
+Rotation: -90, 0, 0
+Scale: 4.79, 4.59, 3.91
+Entrance: -32.066648, 115.835012
+Entrance: -32.066344, 115.834985
+Entrance: -32.065953, 115.835012
+Entrance: -32.065616, 115.835012
+Entrance: -32.065085, 115.835033
+Entrance: -32.064766, 115.835060

@@ -1,0 +1,11 @@
+Name: Loneragan Building
+Alias: LB
+Number: 235
+
+Model: Landmarks/Buildings/235/235
+Texture: Landmarks/Buildings/235/tex
+WorldPos: -18.28403, 0.04649917, -13.61477
+Rotation: 270, 0, 0
+Scale: 0.43, 0.37, 0.37
+
+Entrance: -32.067027, 115.836560

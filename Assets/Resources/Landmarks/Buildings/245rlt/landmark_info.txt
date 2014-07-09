@@ -1,0 +1,4 @@
+Name: Robertson Lecture Theatre
+Alias: RLT
+Number: 245
+Entrance: -32.066595, 115.836579

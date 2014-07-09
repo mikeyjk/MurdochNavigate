@@ -1,0 +1,11 @@
+Name: Murdoch Business School Building
+Alias: MBS
+Number: 512
+
+Model: Landmarks/Buildings/512/512
+Texture: Landmarks/Buildings/512/tex
+WorldPos: 17.42119, 0.01, -15.6408
+Rotation: 270, 0, 0
+Scale: 1.4, 1.76, 3.6
+
+Entrance: -32.066834, 115.832064

@@ -1,0 +1,8 @@
+Name: Environmental Technology Centre
+Alias: ETC
+Number: 881
+
+Model: Landmarks/Buildings/881/881
+Texture: Landmarks/Buildings/881/tex
+
+Entrance: -32.070301, 115.840787

@@ -1,0 +1,18 @@
+# checked 24/05/14 5:44 PM
+
+Name: Engineering & Energy Building 
+Alias: EE
+Number: 220
+Model: Landmarks/Buildings/220/220
+Texture: Landmarks/Buildings/220/220UVPart1
+WorldPos: -19.13391, 0, -21.38193
+LatLong: -32.0661223470966, 115.836978228501
+Y: 0
+Rotation: 0, 180, 0
+Scale: 1.5, 4, 2
+
+Entrance: -32.066315, 115.836972
+
+# if there is a lat long, it must have a y value also
+# WorldPos is required, if it is not available
+# LatLong AND Y are required

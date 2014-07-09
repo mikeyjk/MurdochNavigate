@@ -1,0 +1,4 @@
+Name: Library
+Alias: Lib
+Number: 350
+Entrance: -32.066823, 115.834896

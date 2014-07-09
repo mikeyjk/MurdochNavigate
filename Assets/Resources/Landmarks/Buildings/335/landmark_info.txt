@@ -1,0 +1,13 @@
+Name: Environmental Sciences Building
+Alias: ES
+Number: 335
+
+# Model Data
+Model: Landmarks/Buildings/335/335
+Texture: Landmarks/Buildings/335/tex
+WorldPos: -13.71772, 0, -20.83678
+Rotation: 270, 0, 0
+Scale: 0.25, 0.25, 0.25
+
+# Nav Data
+Entrance: -32.066193, 115.835912

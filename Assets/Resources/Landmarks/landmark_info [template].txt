@@ -1,0 +1,74 @@
+# lines with # are ignored
+
+# if a category/title is missing
+# it is simply ignored
+# or if it contains only whitespace it is ignored
+
+# path locations pre-suppose the root/parent dir
+# is 'Assets/Resources/'
+
+# if there is a lat long, it must have a y value also
+# WorldPos is required, if it is not available
+# LatLong AND Y are required
+
+# unity doesn't require extensions
+# for this reason avoid having duplicate
+# file names
+
+# this data should be used for placing models
+# but also storing the locations of landmarks
+# to allow the user to navigate to them
+
+# 1 landmark can have multiple models and textures
+# associated with it
+# each model requires 1 position, 1 rotation and 1 scale
+# entrances are independent of models
+# entrances aren't required, but if they aren't provided
+# then the user wont be prompted to navigate to it
+# only 1 texture per model is supported
+
+# there can be multiple entrances (and often are)
+
+# if a world position is provided and not a lat long + Y
+# the file is written to, to include a lat long and Y
+# value.
+# this is because lat long + height is scalable at multiple
+# zoom levels / is a relative value, where as the worldpos
+# value pre-supposes a zoom of 16 which is not ideal
+
+Name: Landmark Name
+Model: Landmarks/LandmarkType/ModelFile
+Texture: Landmarks/LandmarkType/TextureFile
+WorldPos: x, y, z
+LatLong: latitude, longitude
+Y: y
+Rotation: x, y, z
+Scale: x, y, z
+Entrance: 
+Entrance: 
+Entrance: 
+
+# with lat
+Name: Landmark Name
+Model: Landmarks/LandmarkType/ModelFile
+Texture: Landmarks/LandmarkType/TextureFile
+LatLong: latitude, longitude
+Y: y
+Rotation: x, y, z
+Scale: x, y, z
+Entrance: 
+Entrance: 
+Entrance: 
+Entrance: 
+
+# without
+Name: Landmark Name
+Model: Landmarks/LandmarkType/ModelFile
+Texture: Landmarks/LandmarkType/TextureFile
+WorldPos: x, y, z
+Rotation: x, y, z
+Scale: x, y, z
+Entrance: 
+Entrance: 
+Entrance: 
+Entrance: 

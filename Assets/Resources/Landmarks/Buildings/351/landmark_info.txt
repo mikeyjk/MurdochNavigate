@@ -1,0 +1,10 @@
+Name: Nexus Theatre, Kim Beazley Lecture Theatre
+Alias: KLBT
+Number: 351
+Model: Landmarks/Buildings/351/351
+Texture: Landmarks/Buildings/351/tex
+WorldPos: 0.74, 1, -14.13
+Rotation: 270, 0, 0
+Scale: 4.11, 4.58, 3.7
+
+Entrance: -32.066838, 115.835280

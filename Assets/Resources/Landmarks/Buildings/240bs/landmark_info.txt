@@ -1,0 +1,13 @@
+Name: Biological Sciences Building
+
+Alias: BS
+Alias: BioSc
+Number: 240
+
+Model: Landmarks/Buildings/240bs/240
+Texture: Landmarks/Buildings/240bs/tex
+WorldPos: -24.58255, 1.490243, -11.99589
+Rotation: 270, 270, 0
+Scale: 0.8, 0.8, 0.8
+
+Entrance: -32.067001, 115.837413

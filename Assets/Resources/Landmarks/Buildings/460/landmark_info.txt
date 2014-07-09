@@ -1,0 +1,10 @@
+Name: Economics Commerce & Law 
+Alias: ECL
+Number: 460
+Entrance: -32.067286, 115.834560
+
+Model: Landmarks/Buildings/460/460
+Texture: Landmarks/Buildings/460/tex
+WorldPos: 1.804339, 1.4, -7.434848
+Rotation: 270, 0, 0
+Scale: 1, 1, 1

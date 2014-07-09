@@ -1,0 +1,9 @@
+Name: Veterinary Biological Sciences Building 
+Alias: VBS
+Entrance: -32.067447, 115.837414
+
+Model: Landmarks/Buildings/250/250
+Texture: Landmarks/Buildings/250/tex
+WorldPos: -21.63461, 3.41, -7.62117
+Rotation: 270, 0, 0
+Scale: 0.52, 0.26, 0.74

@@ -1,0 +1,10 @@
+Name: Campus and Facility Management Office
+Number: 385
+Alias: CFMO
+Entrance: -32.067863, 115.836090
+
+Model: Landmarks/Buildings/385/385
+Texture: Landmarks/Buildings/385/tex
+WorldPos: -10.91565, 0, -5.775523
+Rotation: 270, 0, 0
+Scale: 0.3, 0.3, 0.3

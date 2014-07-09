@@ -1,0 +1,4 @@
+Name: Student Village
+Alias: Amen
+
+Entrance: -32.067701, 115.830334

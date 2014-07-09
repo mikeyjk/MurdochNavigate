@@ -1,0 +1,16 @@
+Name: Physical Sciences Building 
+Alias: PS
+Number: 340
+Model: Landmarks/Buildings/340/340_1
+Texture: Landmarks/Buildings/340/tex_1
+WorldPos: -12.7, 0.33, -16.8
+Rotation: 0, 180, 0
+Scale: 1.97, 1.12, 1.35
+
+Model: Landmarks/Buildings/340/340_2
+Texture: Landmarks/Buildings/340/tex_2
+WorldPos: -9.01, 1, -15.74
+Rotation: -90, 0, 0
+Scale: 10, 3.6, 4.48
+
+Entrance: -32.066573, 115.835414

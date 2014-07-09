@@ -1,0 +1,10 @@
+Name: Education & Humanities Building 
+Alias: EH
+Number: 450
+Entrance: -32.066835, 115.832967
+
+Model: Landmarks/Buildings/450/450
+Texture: Landmarks/Buildings/450/tex
+WorldPos: 8.592623, 0, -17.63523
+Rotation: 270, 0, 0
+Scale: 3, 3.1, 3.5

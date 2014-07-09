@@ -1,0 +1,5 @@
+Name: Biological Sciences Lecture Theatre 
+Alias: BSLT
+Number: 240
+
+Entrance: -32.067009, 115.837416
