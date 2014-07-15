@@ -3,8 +3,10 @@ MurdochNavigate
 
 Interactive, intelligent navigational assistance for Murdoch University Campus (South Street).
 
-I plan to make quite a few changes to this.
-I'll list them when I can.
+\TODO List:
+
+- Drop a marker at certain locations (track parked car).
+- 
 
 To open and run/compile this project in Unity:
 
