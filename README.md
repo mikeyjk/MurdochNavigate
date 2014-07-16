@@ -3,10 +3,12 @@ MurdochNavigate
 
 Interactive, intelligent navigational assistance for Murdoch University Campus (South Street).
 
-\TODO List:
+To Do:
 
-- Drop a marker at certain locations (track parked car).
-- 
+1) Drop a marker at certain locations (track parked car).
+2) Fix camera's magnetic heading.
+3) Add screenshots / video demonstration.
+4) Create a binary directory for Android .apk and iOS exectuable etc.
 
 To open and run/compile this project in Unity:
 
