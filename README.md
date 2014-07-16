@@ -22,9 +22,18 @@ If you wish to merely use the application, I going to add the 'binary' (.apk) an
 **To Do**:
 
 1) Drop a marker at certain locations (track parked car).
+ (share locations on facebook? store a local list of markers for user created content)
 
 2) Fix camera's magnetic heading.
 
 3) Add screenshots / video demonstration.
 
-4) Create a binary directory for Android .apk and iOS exectuable etc.
+4) Create a binary directory for Android and iOS executable/package.
+
+5) Continue investigation of dynamically generating obstructions on campus. Currently not scaleable.
+
+6) User Interface development.
+
+7) Work on touch screen input.
+
+8) Emulate being on campus somehow. Perhaps a debug setting somewhere.
