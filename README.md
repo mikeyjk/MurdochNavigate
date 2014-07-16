@@ -17,10 +17,14 @@ Receiving a Google Static Maps API key is quite simple, as well as free. Please 
 
 If you wish to merely use the application, I going to add the 'binary' (.apk) and upload to the Google Play Store when I have the free time.
 
---
+-------------------
+
 **To Do**:
 
-1) Drop a marker at certain locations (track parked car).\n
-2) Fix camera's magnetic heading.\n
-3) Add screenshots / video demonstration.\n
-4) Create a binary directory for Android .apk and iOS exectuable etc.\n
+1) Drop a marker at certain locations (track parked car).
+
+2) Fix camera's magnetic heading.
+
+3) Add screenshots / video demonstration.
+
+4) Create a binary directory for Android .apk and iOS exectuable etc.
