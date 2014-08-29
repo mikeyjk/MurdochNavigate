@@ -3,7 +3,7 @@ MurdochNavigate
 
 Interactive, intelligent navigational assistance for Murdoch University Campus (South Street).
 
-Screenshots:
+**Screenshots:**
 
 [Splash Message Screenshot](https://raw.githubusercontent.com/mikeyjk/MurdochNavigate/master/Documentation/Images/splash.PNG)
 
@@ -11,7 +11,7 @@ Screenshots:
 
 [Navigate 2](https://raw.githubusercontent.com/mikeyjk/MurdochNavigate/master/Documentation/Images/navigate2.PNG)
 
-    [Navigate 3](https://raw.githubusercontent.com/mikeyjk/MurdochNavigate/master/Documentation/Images/navigate3.PNG "Optional title")
+[Navigate 3](https://raw.githubusercontent.com/mikeyjk/MurdochNavigate/master/Documentation/Images/navigate3.PNG)
 
 To open and run/compile this project in Unity:
 
