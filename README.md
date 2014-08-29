@@ -3,7 +3,10 @@ MurdochNavigate
 
 Interactive, intelligent navigational assistance for Murdoch University Campus (South Street).
 
-
+![Alt text](https://raw.githubusercontent.com/mikeyjk/MurdochNavigate/master/Documentation/Images/splash.PNG "Optional title")
+![Alt text](https://raw.githubusercontent.com/mikeyjk/MurdochNavigate/master/Documentation/Images/navigate.PNG "Optional title")
+![Alt text](https://raw.githubusercontent.com/mikeyjk/MurdochNavigate/master/Documentation/Images/navigate2.PNG "Optional title")
+![Alt text](https://raw.githubusercontent.com/mikeyjk/MurdochNavigate/master/Documentation/Images/navigate3.PNG "Optional title")
 
 To open and run/compile this project in Unity:
 
@@ -23,7 +26,7 @@ If you wish to merely use the application, I going to add the 'binary' (.apk) an
 
 1) Fix camera's magnetic heading.
 
-2) Add screenshots / video demonstration.
+2) Add video demonstration.
 
 3) Create a binary directory for Android and iOS executable/package.
 
@@ -33,7 +36,7 @@ If you wish to merely use the application, I going to add the 'binary' (.apk) an
 
 6) Work on touch screen input.
 
-7) Emulate being on campus somehow. Perhaps a debug setting somewhere.
+7) Emulate being on campus from mobile device, somehow.
 
 **Ideas**:
 
