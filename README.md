@@ -3,10 +3,13 @@ MurdochNavigate
 
 Interactive, intelligent navigational assistance for Murdoch University Campus (South Street).
 
-[Splash Message Screenshot](https://raw.githubusercontent.com/mikeyjk/MurdochNavigate/master/Documentation/Images/splash.PNG)
-[Navigate 1](https://raw.githubusercontent.com/mikeyjk/MurdochNavigate/master/Documentation/Images/navigate.PNG "Optional title")
-[Navigate 2](https://raw.githubusercontent.com/mikeyjk/MurdochNavigate/master/Documentation/Images/navigate2.PNG "Optional title")
-[Navigate 3](https://raw.githubusercontent.com/mikeyjk/MurdochNavigate/master/Documentation/Images/navigate3.PNG "Optional title")
+    [Splash Message Screenshot](https://raw.githubusercontent.com/mikeyjk/MurdochNavigate/master/Documentation/Images/splash.PNG)
+
+    [Navigate 1](https://raw.githubusercontent.com/mikeyjk/MurdochNavigate/master/Documentation/Images/navigate.PNG "Optional title")
+
+    [Navigate 2](https://raw.githubusercontent.com/mikeyjk/MurdochNavigate/master/Documentation/Images/navigate2.PNG "Optional title")
+
+    [Navigate 3](https://raw.githubusercontent.com/mikeyjk/MurdochNavigate/master/Documentation/Images/navigate3.PNG "Optional title")
 
 To open and run/compile this project in Unity:
 
