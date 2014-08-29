@@ -3,9 +3,7 @@ MurdochNavigate
 
 Interactive, intelligent navigational assistance for Murdoch University Campus (South Street).
 
-Written in C# with the Unity Game Development Engine.
-
-Currently Android is the only tested/supported platform however it was designed with iOS support in mind.
+Written in C# with the Unity Game Development Engine. Currently Android is the only tested/supported platform however it was designed with iOS support in mind.
 
 -------------------
 
@@ -59,21 +57,16 @@ If you wish to merely use the application, I am going to add the 'binary' (.apk)
 **Original Development Team (Q2 2014):**
 
 **Michael James Kiernan** (Bsc Computer Science, Games Technology)
-
-*Lead Programmer, Lead Designer, Software Architect*
+- *Lead Programmer, Lead Designer, Software Architect*
 
 **Matius Kristiyanto Tjandradjaja** (BDM Games Software Design and Production)
-
-*Lead Artist, 3D Modelling, Virtual Environment Design*
+- *Lead Artist, 3D Modelling, Virtual Environment Design*
 
 **Jason Byrne** (Bsc, Games Software Design and Production)
-
-*Programmer, Developer, Record Keeper*
+- *Programmer, Developer, Record Keeper*
 
 **Zach Reynolds** (Bsc, Games Software Design and Production)
-
-*Programmer, Designer, Test Driven Development*
+- *Programmer, Designer, Test Driven Development*
 
 **Julie Brown** (Bsc, Games Software Design and Production)
-
-*Documentation, Development, Project Management*
+- *Documentation, Development, Project Management*
