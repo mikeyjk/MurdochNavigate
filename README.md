@@ -25,7 +25,7 @@ Edit Assets/Src/GoogleMaps.cs on Line 48 to include a Google Static Maps API Key
 
 Receiving a Google Static Maps API key is quite simple, as well as free. Please consult Google documentation if you wish to do this. I was tempted to include my own because there is little chance of someone abusing my key, but it isn't really recommended in the development community.
 
-If you wish to merely use the application, I going to add the 'binary' (.apk) and upload to the Google Play Store when I have the free time.
+If you wish to merely use the application, I am going to add the 'binary' (.apk) and upload to the Google Play Store when I have the free time. The user manual for this process can be found [here](https://github.com/mikeyjk/MurdochNavigate/blob/master/Documentation/Manual/Murdoch%20Navigate%20User%20Manual.pdf) (.pdf).
 
 -------------------
 
@@ -56,17 +56,17 @@ If you wish to merely use the application, I going to add the 'binary' (.apk) an
 
 **Original Development Team (Q2 2014):**
 
-Michael James Kiernan (Bsc Computer Science, Games Technology)
-- Lead Programmer, Lead Designer, Software Architect
+**Michael James Kiernan** (Bsc Computer Science, Games Technology)
+*Lead Programmer, Lead Designer, Software Architect*
 
-Matius Kristiyanto Tjandradjaja (BDM Games Software Design and Production)
-- Lead Artist, 3D Modelling, Virtual Environment Design
+**Matius Kristiyanto Tjandradjaja** (BDM Games Software Design and Production)
+*Lead Artist, 3D Modelling, Virtual Environment Design*
 
-Jason Byrne (Bsc, Games Software Design and Production)
-- Programmer, Developer, Record Keeper
+**Jason Byrne** (Bsc, Games Software Design and Production)
+*Programmer, Developer, Record Keeper*
 
-Zach Reynolds (Bsc, Games Software Design and Production)
-- Programmer, Designer, Test Driven Development 
+**Zach Reynolds** (Bsc, Games Software Design and Production)
+*Programmer, Designer, Test Driven Development*
 
-Julie Brown (Bsc, Games Software Design and Production)
-- Documentation, Development, Project Management
+**Julie Brown** (Bsc, Games Software Design and Production)
+*Documentation, Development, Project Management*
