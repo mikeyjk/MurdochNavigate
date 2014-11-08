@@ -31,26 +31,13 @@ If you wish to merely use the application, I am going to add the 'binary' (.apk)
 
 **To Do**:
 
-1) Fix camera's magnetic heading.
+1) Add video demonstration.
 
-2) Add video demonstration.
+2) User Interface revamp.
 
-3) Create a binary directory for Android and iOS executable/package.
+3) Work on touch screen input.
 
-4) Continue investigation of dynamically generating obstructions on campus. Currently not scaleable.
-
-5) User Interface development.
-
-6) Work on touch screen input.
-
-7) Emulate being on campus from mobile device, somehow.
-
-**Ideas**:
-
-1) Drop a marker at certain locations (track parked car).
- (share locations on facebook? store a local list of markers for user created content)
- 
-2) Touch a building to view more information about it.
+4) Emulate being on campus from mobile device, somehow.
 
 -------------------
 
