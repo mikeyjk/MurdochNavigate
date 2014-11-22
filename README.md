@@ -13,22 +13,6 @@ Written in C# with the Unity Game Development Engine. Currently Android is the o
 
 -------------------
 
-**Installation/Usage:**
-
-To open and run/compile this project in Unity:
-
-    git clone https://github.com/mikeyjk/MurdochNavigate
-
-Edit Assets/Src/GoogleMaps.cs on Line 48 to include a Google Static Maps API Key:
-
-    static readonly private string apiKey = "key_goes_here";
-
-Receiving a Google Static Maps API key is quite simple, as well as free. Please consult Google documentation if you wish to do this. I was tempted to include my own because there is little chance of someone abusing my key, but it isn't really recommended in the development community.
-
-If you wish to merely use the application, I am going to add the 'binary' (.apk) and upload to the Google Play Store when I have the free time. The user manual for this process can be found [here](https://github.com/mikeyjk/MurdochNavigate/blob/master/Documentation/Manual/Murdoch%20Navigate%20User%20Manual.pdf) (.pdf).
-
--------------------
-
 **To Do**:
 
 1) Add video demonstration.
