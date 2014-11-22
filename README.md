@@ -5,15 +5,11 @@ Interactive, intelligent navigational assistance for Murdoch University Campus (
 
 Written in C# with the Unity Game Development Engine. Currently Android is the only tested/supported platform however it was designed with iOS support in mind.
 
--------------------
-
-**Screenshots:**
+Screenshots:
 
 [Splash Message Screenshot](https://raw.githubusercontent.com/mikeyjk/MurdochNavigate/master/Documentation/Images/splash.PNG), [Navigate 1](https://raw.githubusercontent.com/mikeyjk/MurdochNavigate/master/Documentation/Images/navigate.PNG), [Navigate 2](https://raw.githubusercontent.com/mikeyjk/MurdochNavigate/master/Documentation/Images/navigate2.PNG), [Navigate 3](https://raw.githubusercontent.com/mikeyjk/MurdochNavigate/master/Documentation/Images/navigate3.PNG)
 
--------------------
-
-**To Do**:
+To Do:
 
 1) Add video demonstration.
 
@@ -23,9 +19,7 @@ Written in C# with the Unity Game Development Engine. Currently Android is the o
 
 4) Emulate being on campus from mobile device, somehow.
 
--------------------
-
-**Original Development Team (Q2 2014):**
+Original Development Team (Q2 2014):
 
 **Michael James Kiernan** (Bsc Computer Science, Games Technology)
 - *Lead Programmer, Lead Designer, Software Architect*
