@@ -45,7 +45,7 @@ public class GoogleMap
 
 	// api key, private
 	[SerializeField]
-	static private string apiKey = "";
+	static private string apiKey = "AIzaSyAbZWppowXC8YlSI4T6T2CvpPXRmWeeKQg";
 	
 	// query server
 	[SerializeField]
