@@ -569,7 +569,7 @@ public class SceneManager : MonoBehaviour
 	 */
 	public void menuNav()
 	{
-		if(m_menu.indexNumber >= 0 && 
+		if(m_menu.indexNumber >= 0 &&
 		   m_menu.indexNumber <= m_menu.menuOptions.Count)
 		{
 			string targName = m_menu.menuOptions[m_menu.indexNumber];
@@ -596,7 +596,7 @@ public class SceneManager : MonoBehaviour
 						}
 					}
 				}
-				
+
 				// read other data from file
 				for(int other = 0; other < m_other.Count; ++other)
 				{
@@ -611,7 +611,7 @@ public class SceneManager : MonoBehaviour
 						}
 					}
 				}
-				
+
 				// read building data from file
 				for(int building = 0; building < m_buildings.Count; ++building)
 				{
