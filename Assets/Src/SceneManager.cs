@@ -165,32 +165,12 @@ public class SceneManager : MonoBehaviour
 		m_buildings = m_fileLoader.m_buildings;
 		m_services = m_fileLoader.m_services;
 		m_other = m_fileLoader.m_others;
-
-		// read services data from file
-		for(int service = 0; service < m_services.Count; ++service)
+		
+		for(int building = 0; building < m_buildings.Count; ++building) // for buildings
 		{
-			// add entry to the menu
-			m_menu.menuOptions.Add(m_services[service].m_name);
-		}
-
-		// read other data from file
-		for(int other = 0; other < m_other.Count; ++other)
-		{
-			// add entry to the menu
-			m_menu.menuOptions.Add(m_other[other].m_name);
-		}
-
-		// read building data from file
-		for(int building = 0; building < m_buildings.Count; ++building)
-		{
-			// add entry to the menu
-			m_menu.menuOptions.Add(m_buildings[building].m_name);
-
-			// load model data
-			for(int model = 0; model < m_buildings[building].m_models.Count; ++model)
+			for(int model = 0; model < m_buildings[building].m_models.Count; ++model) // for models in buildings
 			{
-				// if no texture path is available
-				if(String.IsNullOrEmpty(m_buildings[building].m_models[model].m_texPath))
+				if(String.IsNullOrEmpty(m_buildings[building].m_models[model].m_texPath)) // if no texture path is available
 				{
 					int ind = insertModel(m_buildings[building].m_name, m_buildings[building].m_models[model].m_path, "");
 					m_modelManager.positionModel(ind, m_buildings[building].m_models[model].m_position);
@@ -207,6 +187,7 @@ public class SceneManager : MonoBehaviour
 			}
 		}
 	}
+
 
 	/**
 	 * @Function: Update().
