@@ -150,7 +150,7 @@ public class LoadLandmarks
 			// the constructor doesn't seem to do this for some reason :(
 			// speculatively it may be because the double[] is of an unspecified length?
 			// not sure
-			temp.m_entrances = new List<double[]>();
+			temp.m_entrances = new List<LatLong>();
 			temp.m_alias = new List<string>();
 			
 			// for each line in document
@@ -212,11 +212,11 @@ public class LoadLandmarks
 							// get lat and long
 							try
 							{
-								double[] latLong = new double[2]
-								{
+								LatLong latLong = new LatLong
+								(
 									double.Parse(comsplit[0]),
 									double.Parse(comsplit[1])
-								};
+								);
 								
 								temp.m_entrances.Add(latLong);
 							}
@@ -258,7 +258,7 @@ public class LoadLandmarks
 			// the constructor doesn't seem to do this for some reason :(
 			// this is perrrttyy heinous
 			Building temp = new Building();
-			temp.m_entrances = new List<double[]>(); // initialize the list of entrances,
+			temp.m_entrances = new List<LatLong>(); // initialize the list of entrances,
 			temp.m_alias = new List<string>();
 			temp.m_models = new List<Model>();
 			
@@ -386,11 +386,11 @@ public class LoadLandmarks
 							// get lat and long
 							try
 							{
-								double[] latLong = new double[2]
-								{
+								LatLong latLong = new LatLong
+								(
 									double.Parse(comsplit[0]),
 									double.Parse(comsplit[1])
-								};
+								);
 								
 								temp.m_entrances.Add(latLong);
 							}
@@ -558,11 +558,10 @@ public class LoadLandmarks
 							// get lat and long
 							try
 							{
-								double[] latLong = new double[2]
-								{
+								LatLong latLong = new LatLong(
 									double.Parse(comsplit[0]),
 									double.Parse(comsplit[1])
-								};
+								);
 								
 								temp.m_models[temp.m_models.Count - 1].m_latLong = latLong;
 								// temp.m_modelLatLong.Add(latLong);

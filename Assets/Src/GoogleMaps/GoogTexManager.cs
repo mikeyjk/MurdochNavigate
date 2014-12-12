@@ -37,7 +37,7 @@ public class GoogTexManager : MonoBehaviour
 	public bool Hide;
 
 	// define the center starting point of the map
-	public readonly double[] startLatLong = new double[2]{-32.0686106913269d, 115.834350585938d};
+	public readonly LatLong startLatLong = new LatLong(-32.0686106913269d, 115.834350585938d);
 
 	// enum to control what texture is in the current context
 	private enum whichTex { main, zoomIn, zoomOut, panLeft, panRight, panUp, panDown }
@@ -101,8 +101,8 @@ public class GoogTexManager : MonoBehaviour
 		// create space to store google textures
 
 		m_main = new GoogTex(); 
-		m_main.m_webQuery.m_latitude = startLatLong[0];
-		m_main.m_webQuery.m_longitude = startLatLong[1];
+		m_main.m_webQuery.m_latitude = startLatLong.m_latitude;
+		m_main.m_webQuery.m_longitude = startLatLong.m_longitude;
 
 		m_in = new GoogTex(); m_in.m_webQuery.m_zoom++;
 		m_out = new GoogTex();; m_out.m_webQuery.m_zoom--;
@@ -170,42 +170,42 @@ public class GoogTexManager : MonoBehaviour
 	 * \TODO: If we update one... we should probably update all.
 	 * That being said we copy main when loading the others.
 	 * */
-	public void setLatLong(double[] latLong)
+	public void setLatLong(LatLong latLong)
 	{
 		if(m_currentTex == whichTex.main)
 		{
-			m_main.m_webQuery.m_latitude = latLong[0];
-			m_main.m_webQuery.m_longitude = latLong[1];
+			m_main.m_webQuery.m_latitude = latLong.m_latitude;
+			m_main.m_webQuery.m_longitude = latLong.m_longitude;
 		}
 		else if(m_currentTex == whichTex.panUp)
 		{
-			m_up.m_webQuery.m_latitude = latLong[0];
-			m_up.m_webQuery.m_longitude = latLong[1];
+			m_up.m_webQuery.m_latitude = latLong.m_latitude;
+			m_up.m_webQuery.m_longitude = latLong.m_longitude;
 		}
 		else if(m_currentTex == whichTex.panDown)
 		{
-			m_down.m_webQuery.m_latitude = latLong[0];
-			m_down.m_webQuery.m_longitude = latLong[1];
+			m_down.m_webQuery.m_latitude = latLong.m_latitude;
+			m_down.m_webQuery.m_longitude = latLong.m_longitude;
 		}
 		else if(m_currentTex == whichTex.panLeft)
 		{
-			m_left.m_webQuery.m_latitude = latLong[0];
-			m_left.m_webQuery.m_longitude = latLong[1];
+			m_left.m_webQuery.m_latitude = latLong.m_latitude;
+			m_left.m_webQuery.m_longitude = latLong.m_longitude;
 		}
 		else if(m_currentTex == whichTex.panRight)
 		{
-			m_right.m_webQuery.m_latitude = latLong[0];
-			m_right.m_webQuery.m_longitude = latLong[1];
+			m_right.m_webQuery.m_latitude = latLong.m_latitude;
+			m_right.m_webQuery.m_longitude = latLong.m_longitude;
 		}
 		else if(m_currentTex == whichTex.zoomIn)
 		{
-			m_in.m_webQuery.m_latitude = latLong[0];
-			m_in.m_webQuery.m_longitude = latLong[1];
+			m_in.m_webQuery.m_latitude = latLong.m_latitude;
+			m_in.m_webQuery.m_longitude = latLong.m_longitude;
 		}
 		else if(m_currentTex == whichTex.zoomOut)
 		{
-			m_out.m_webQuery.m_latitude = latLong[0];
-			m_out.m_webQuery.m_longitude = latLong[1];
+			m_out.m_webQuery.m_latitude = latLong.m_latitude;
+			m_out.m_webQuery.m_longitude = latLong.m_longitude;
 		}
 	}
 	

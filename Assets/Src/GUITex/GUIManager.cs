@@ -26,7 +26,7 @@ public class GUIManager : MonoBehaviour
 
 	[SerializeField]
 	public bool m_showDisplayGPS;
-		public double[] m_latLong; // latitude and longitude
+		public LatLong m_latLong; // latitude and longitude
 
 	[SerializeField]
 	public bool m_showGPSDisabled;
@@ -96,7 +96,7 @@ public class GUIManager : MonoBehaviour
 	{
 		// lost connection screen
 		m_progress = 0;
-		m_latLong = new double[4];
+		m_latLong = new LatLong();
 		m_acc = new Vector2();
 
 		m_showAccuracy = false;
@@ -222,12 +222,12 @@ public class GUIManager : MonoBehaviour
 		int w = Screen.width/2;
 		int h = Screen.height/10;
 		
-		GUI.Box(new Rect (0, 0 + h, w, h), "[T: " + m_latLong[0] + "]");
+		GUI.Box(new Rect (0, 0 + h, w, h), "[T: " + m_latLong.m_timestamp + "]");
 		GUI.Box(new Rect (0, 0 + h*2, w, h), "[LT: " + lastTime + "]");
 		GUI.Box(new Rect (0, 0 + h*3, w, h), "[Pth: " + hur + "]");
-		GUI.Box(new Rect (0, 0 + h*4, w, h), "[Acc: " + m_latLong[1] + "]");
-		GUI.Box(new Rect (0, 0 + h*5, w, h), "[Lat: " + m_latLong[2] + "]");
-		GUI.Box(new Rect (0, 0 + h*6, w, h), "[Long: " + m_latLong[3] + "]");
+		GUI.Box(new Rect (0, 0 + h*4, w, h), "[Acc: " + m_latLong.m_horizontalAccuracy + "]");
+		GUI.Box(new Rect (0, 0 + h*5, w, h), "[Lat: " + m_latLong.m_latitude + "]");
+		GUI.Box(new Rect (0, 0 + h*6, w, h), "[Long: " + m_latLong.m_longitude + "]");
 		GUI.Box(new Rect (0, 0 + h*7, w, h), "[Npos: " + m_navPos.x + ", " + m_navPos.y + "]");
 	}
 

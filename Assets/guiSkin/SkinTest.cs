@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using System.Collections;
 
@@ -33,80 +34,8 @@ public class SkinTest : MonoBehaviour
 	[SerializeField]
 	public GUISkin cusGUI;
 
-	/**
-	public static string[] list = //31 buildings
-	{
-		"(Reset)",
-		"Toilets",
-		"Carparks",
-		"[330] Chancellery Building",
-		"[335] Environmental Sciences Building (ES)",
-		"[220] Engineering & Energy Building (EE)",
-		"[340] Physical Sciences Building (PS)",
-		"[351] Nexus Theatre, Kim Beazley Lecture Theatre (KLBT)",
-		"[350] Library (Lib)",
-		"[385] Campus and Facility Management Office (CFMO)",
-		"[440] Social Sciences Building (SS)",
-		"[430] Refectory (Ref)",
-		"[425] Senate Building",
-		"[418] Tavern",
-		"[415] Gymnasium (Gym)",
-		"[411] Drama Centre",
-		"[450] Education & Humanities Building (EH)",
-		"[461] Business Information Technology and Law Building (BITL)",
-		"[460] Economics Commerce & Law (ECL)",
-		"[465] Law Building (Law)",
-		"[235] Loneragan Building (LB)",
-		"[490] Student Amenities Building (Amen)",
-		"[551-557] Student Village",
-		"[515] Worship Centre",
-		"[510] Child Care Centre",
-		"[510] Murdoch Business Building",
-		"[512] Learning Link Building (LL)",
-		"[240] Biological Sciences Building (BS)",
-		"[240] Biological Sciences Lecture Theatre (BSLT)",
-		"[245] Science & Computing Building (SC)",
-		"[245] Robertson Lecture Theatre (RLT)",
-		"[250] Veterinary Biological Sciences Building (VBS)",
-		"[260] Veterinary Clinical Sciences Building (VCS)",
-		"[881] Environmental Technology Centre (ETC)",
-	};*/
-
-	public static string[] list = //31 buildings
-	{
-		"(Reset)",
-		"[330] Chancellery Building",
-		"[335] Environmental Sciences Building (ES)",
-		"[220] Engineering & Energy Building (EE)",
-		"[340] Physical Sciences Building (PS)",
-		"[351] Nexus Theatre, Kim Beazley Lecture Theatre (KLBT)",
-		"[350] Library (Lib)",
-		"[385] Campus and Facility Management Office (CFMO)",
-		"[440] Social Sciences Building (SS)",
-		"[430] Refectory (Ref)",
-		"[425] Senate Building",
-		"[418] Tavern",
-		"[415] Gymnasium (Gym)",
-		"[411] Drama Centre",
-		"[450] Education & Humanities Building (EH)",
-		"[461] Business Information Technology and Law Building (BITL)",
-		"[460] Economics Commerce & Law (ECL)",
-		"[465] Law Building (Law)",
-		"[235] Loneragan Building (LB)",
-		"[490] Student Amenities Building (Amen)",
-		"[551-557] Student Village",
-		"[515] Worship Centre",
-		"[510] Child Care Centre",
-		"[510] Murdoch Business Building",
-		"[512] Learning Link Building (LL)",
-		"[240] Biological Sciences Building (BS)",
-		"[240] Biological Sciences Lecture Theatre (BSLT)",
-		"[245] Science & Computing Building (SC)",
-		"[245] Robertson Lecture Theatre (RLT)",
-		"[250] Veterinary Biological Sciences Building (VBS)",
-		"[260] Veterinary Clinical Sciences Building (VCS)",
-		"[881] Environmental Technology Centre (ETC)",
-	};
+	[SerializeField]
+	public List<string> menuOptions;
 
     public struct snNodeArray
     {
@@ -166,10 +95,10 @@ public class SkinTest : MonoBehaviour
 
 	        scrollPosition = GUILayout.BeginScrollView(scrollPosition, GUILayout.Width(rctWindow3.width - 50f), GUILayout.Height(rctWindow3.height - 70f));
 	        
-			for(int i = 0; i < list.Length; i++)
+			for(int i = 0; i < menuOptions.Count; i++)
 	        {
 	            // gcListItem("I'm listItem number " + i);
-				if(GUILayout.Button(list[i], new GUILayoutOption[]{GUILayout.Height(Screen.height/10), GUILayout.Width(Screen.width - 45)}))
+				if(GUILayout.Button(menuOptions[i], new GUILayoutOption[]{GUILayout.Height(Screen.height/10), GUILayout.Width(Screen.width - 45)}))
 				{
 					indexNumber = i;
 					m_expand = false;

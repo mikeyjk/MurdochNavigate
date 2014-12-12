@@ -18,13 +18,13 @@ public class Landmark
 {
 	public string m_name; // name of the landmark
 	public List<string> m_alias; // list of aliases if appropriate
-	public List<double[]> m_entrances; // list of locations to this landmark
+	public List<LatLong> m_entrances; // list of locations to this landmark
 	
 	public Landmark()
 	{
 		string m_name = ""; // name of the landmark
 		List<string> m_alias = new List<string>(); // list of aliases if appropriate
-		List<double[]> m_entrances = new List<double[]>(); // list of locations to this landmark
+		List<LatLong> m_entrances = new List<LatLong>(); // list of locations to this landmark
 	}
 	
 	public Landmark(string name, List<string> alias, List<double[]> entrances)
@@ -36,7 +36,7 @@ public class Landmark
 		
 		if(alias != null)
 		{
-			if(m_alias != alias && alias.Count > 0)
+			if(!m_alias.Equals(alias) && alias.Count > 0)
 			{
 				m_alias.Clear();
 				
@@ -49,13 +49,14 @@ public class Landmark
 		
 		if(entrances != null)
 		{
-			if(m_entrances != entrances && alias.Count > 0)
+			if(!m_entrances.Equals(entrances) && alias.Count > 0)
 			{
 				m_entrances.Clear();
 				
 				for(int i = 0; i < entrances.Count; ++i)
 				{
-					m_entrances.Add(entrances[i]);
+					LatLong outObject = new LatLong(entrances[i][0], entrances[i][1]);
+					m_entrances.Add(outObject);
 				}
 			}
 		}
@@ -81,7 +82,7 @@ public class Landmark
 		{
 			for(int i = 0; i < m_entrances.Count; ++i)
 			{
-				Debug.Log("\tEntrance: " + m_entrances[i][0] + ", " + m_entrances[i][1]);
+				Debug.Log("\tEntrance: " + m_entrances[i].m_latitude + ", " + m_entrances[i].m_longitude);
 			}
 		}
 		else

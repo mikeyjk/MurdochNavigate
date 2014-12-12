@@ -71,37 +71,37 @@ public class GoogJS
 		pixelsPerLonRadian_ = TILE_SIZE / (2d * Math.PI);
 	}
 	
-	public double[] fromLatLngToWorld(double[] latLng) 
+	public double[] fromLatLngToWorld(LatLong latLng) 
 	{
 		double[] point = new double[]{0,0};
 		double[] origin = pixelOrigin_;
 
-		point[0] = origin[0] + latLng[1] * pixelsPerLonDegree_;
+		point[0] = origin[0] + latLng.m_longitude * pixelsPerLonDegree_;
 
 		// Truncating to 0.9999 effectively limits latitude to 89.189. This is
 		// about a third of a tile past the edge of the world tile.
-		double siny = bound(Math.Sin(degreesToRadians(latLng[0])), -0.9999, 0.9999);
+		double siny = bound(Math.Sin(degreesToRadians(latLng.m_latitude)), -0.9999, 0.9999);
 		
 		point[1] = origin[1] + 0.5d * Math.Log((1d + siny) / (1d - siny)) * -pixelsPerLonRadian_;
 		return point;
 	}
 	
-	public double[] fromWorldToLatLng(double[] point)
+public LatLong fromWorldToLatLng(double[] point)
 	{
 		double[] origin = pixelOrigin_;
 		double lng = (point[0] - origin[0]) / (double)pixelsPerLonDegree_;
 		double latRadians = (point[1] - origin[1]) / (double)-pixelsPerLonRadian_;
 		double lat = radiansToDegrees(2d * Math.Atan(Math.Exp(latRadians)) - Math.PI / 2d);
-		return new double[]{lat, lng};
+		return new LatLong(lat, lng);
 	}
 
-	public double[] fromLatLngToPixel(double[] latLng)
+	public double[] fromLatLngToPixel(LatLong latLng)
 	{
 		double[] world = fromLatLngToWorld(latLng);
 		return(new double[]{world[0] * numTiles, world[1] * numTiles});
 	}
 
-	public double[] fromPixelToLatLng(double[] pixel)
+	public LatLong fromPixelToLatLng(double[] pixel)
 	{
 		double[] world = {pixel[0] / numTiles, pixel[1] / numTiles};
 		return(fromWorldToLatLng(world));
@@ -109,13 +109,14 @@ public class GoogJS
 
 	public double[] getCorners(double[] center)
 	{
-		double[] centerPx = fromLatLngToWorld(center);
+		LatLong newCenter = new LatLong(center[0], center[1]);
+		double[] centerPx = fromLatLngToWorld(newCenter);
 		double[] SWPoint = new double[]{centerPx[0] - pixelOrigin_[0] /numTiles, centerPx[1] + pixelOrigin_[1] / numTiles};
-		double[] SWLatLon = fromWorldToLatLng(SWPoint);
+		LatLong SWLatLon = fromWorldToLatLng(SWPoint);
 		double[] NEPoint = new double[]{centerPx[0] + pixelOrigin_[0] / numTiles, centerPx[1] - pixelOrigin_[1] / numTiles};
-		double[] NELatLon = fromWorldToLatLng(NEPoint);
+		LatLong NELatLon = fromWorldToLatLng(NEPoint);
 
-		return(new double[]{NELatLon[0], NELatLon[1], SWLatLon[0], SWLatLon[1]});
+		return(new double[]{NELatLon.m_latitude, NELatLon.m_longitude, SWLatLon.m_latitude, SWLatLon.m_longitude});
 	}
 
 	public double[] locationCoord(double[] latLon)
