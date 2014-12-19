@@ -41,15 +41,12 @@ using System.Runtime.Serialization;
 [System.Serializable]
 public class GoogleMap
 {
-	// data attributes
-
-	// api key, private
-	[SerializeField]
-	static private string apiKey = "";
+	// api key
+	static private string m_keyLocation = "StaticMap/developer_key";
+	static private string m_developerKey = "";
 	
 	// query server
-	[SerializeField]
-	static private string GServer = "http://maps.googleapis.com/maps/api/staticmap";
+	static private string m_queryServer = "http://maps.googleapis.com/maps/api/staticmap";
 
 	// generate query on construction if true
 	[SerializeField]
@@ -62,16 +59,14 @@ public class GoogleMap
 	// address name
 	[SerializeField]
 	public string m_address { get; set; }
-	
-	// latitude, r+w
+
 	[SerializeField]
 	public double m_latitude { get; set; }
 	
-	// longitude, r+w
 	[SerializeField]
 	public double m_longitude { get; set; }
 	
-	// zoom, r+w
+	// zoom
 	[SerializeField]
 	public int m_zoom {get; set; }
 	
@@ -79,15 +74,15 @@ public class GoogleMap
 	[SerializeField]
 	public int m_size { get; set; }
 	
-	// scale, read + write
+	// scale
 	[SerializeField]
 	public int m_scale { get; set; }
 	
-	// query, read only
+	// query
 	[SerializeField]
 	public string m_query { get; private set; }
 	
-	// map type, r+w
+	// map type: google defined data type
 	[SerializeField]
 	public string m_mapType { get; set;	}
 
@@ -121,7 +116,13 @@ public class GoogleMap
 		m_autoLocateCenter = false;
 		
 		if (m_queryOnStart)
+		{
 			generateQuery ();
+		}
+
+		// populate the api key (keeping it out of vcontrol)
+		TextAsset bindata = Resources.Load("apiKey") as TextAsset;
+		m_developerKey = bindata.text;
 	}
 
 	public GoogleMap(GoogleMap rhs)
@@ -190,7 +191,7 @@ public class GoogleMap
      * */
 	public void generateQuery()
 	{
-		var qs = GServer;
+		var qs = m_queryServer;
 		
 		if (m_address != "")
 			qs += "?center=" + WWW.EscapeURL(m_address);
@@ -203,7 +204,7 @@ public class GoogleMap
 		qs += "&size=" + WWW.EscapeURL(string.Format ("{0}x{0}", m_size));
 		qs += "&scale=" + m_scale.ToString ();
 		qs += "&maptype=" + m_mapType.ToString();
-		qs += "&key=" + apiKey;
+		qs += "&key=" + m_developerKey;
 		
 		var usingSensor = false;
 		
@@ -241,8 +242,6 @@ public class GoogleMap
 		// Debug.LogError ("query is set: " + query);
 	}
 }
-
-// enums
 
 public enum GoogleMapColor
 {
