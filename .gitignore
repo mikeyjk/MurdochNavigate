@@ -11,6 +11,7 @@ Library/
 # ===================================== #
 ExportedObj/
 *.meta
+*.mat
 *.svd
 *.userprefs
 *.csproj
