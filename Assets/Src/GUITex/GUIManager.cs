@@ -159,11 +159,11 @@ public class GUIManager : MonoBehaviour
 
 		if(m_showSplash)
 		{
-			m_splash.guiTexture.enabled = true;
+			m_splash.GetComponent<GUITexture>().enabled = true;
 		}
 		else
 		{
-			m_splash.guiTexture.enabled = false;
+			m_splash.GetComponent<GUITexture>().enabled = false;
 		}
 
 		if(intro && !m_showLoadingScreen && !m_loadError) { introf(); }
@@ -271,7 +271,7 @@ public class GUIManager : MonoBehaviour
 	public void splash()
 	{
 
-		m_splash.guiTexture.enabled = true;
+		m_splash.GetComponent<GUITexture>().enabled = true;
 	}
 
 	public void GPSFailed()

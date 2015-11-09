@@ -89,9 +89,9 @@ public class Player : MonoBehaviour
 		m_accuracyRadiusColor = new Color(Color.blue.r, Color.blue.g, Color.blue.b, 0.25f); // make player radius even lighter
 
 		// set transparent shader to player objects
-		m_playerModel.renderer.material = tranDif;
-		m_accuracyRadius.renderer.material = tranDif;
-		m_playerPointer.renderer.material = tranDif;
+		m_playerModel.GetComponent<Renderer>().material = tranDif;
+		m_accuracyRadius.GetComponent<Renderer>().material = tranDif;
+		m_playerPointer.GetComponent<Renderer>().material = tranDif;
 
 		// we do not want the player to be rotated automatically
 		// by the nav agent
@@ -127,17 +127,17 @@ public class Player : MonoBehaviour
 	private void updateColour()
 	{
 		// if color doesn't match, set it
-		if(m_playerModel.renderer.material.color != m_playerModelColor)
+		if(m_playerModel.GetComponent<Renderer>().material.color != m_playerModelColor)
 		{
-			m_playerModel.renderer.material.color = m_playerModelColor;
+			m_playerModel.GetComponent<Renderer>().material.color = m_playerModelColor;
 		}
-		if(m_accuracyRadius.renderer.material.color != m_accuracyRadiusColor)
+		if(m_accuracyRadius.GetComponent<Renderer>().material.color != m_accuracyRadiusColor)
 		{
-			m_accuracyRadius.renderer.material.color = m_accuracyRadiusColor;
+			m_accuracyRadius.GetComponent<Renderer>().material.color = m_accuracyRadiusColor;
 		}
-		if(m_playerPointer.renderer.material.color != m_playerPointerColor)
+		if(m_playerPointer.GetComponent<Renderer>().material.color != m_playerPointerColor)
 		{
-			m_playerPointer.renderer.material.color = m_playerPointerColor;
+			m_playerPointer.GetComponent<Renderer>().material.color = m_playerPointerColor;
 		}
 	}
 
@@ -220,19 +220,19 @@ public class Player : MonoBehaviour
 	 * */
 	private void show()
 	{
-		if(!m_playerModel.renderer.enabled)
+		if(!m_playerModel.GetComponent<Renderer>().enabled)
 		{
-			m_playerModel.renderer.enabled = true;
+			m_playerModel.GetComponent<Renderer>().enabled = true;
 		}
 
-		if(!m_playerPointer.renderer.enabled)
+		if(!m_playerPointer.GetComponent<Renderer>().enabled)
 		{
-			m_playerPointer.renderer.enabled = true;
+			m_playerPointer.GetComponent<Renderer>().enabled = true;
 		}
 
-		if(!m_accuracyRadius.renderer.enabled)
+		if(!m_accuracyRadius.GetComponent<Renderer>().enabled)
 		{
-			m_accuracyRadius.renderer.enabled = true;
+			m_accuracyRadius.GetComponent<Renderer>().enabled = true;
 		}
 	}
 	
@@ -244,19 +244,19 @@ public class Player : MonoBehaviour
 	 * */
 	private void hide()
 	{
-		if(m_playerModel.renderer.enabled)
+		if(m_playerModel.GetComponent<Renderer>().enabled)
 		{
-			m_playerModel.renderer.enabled = false;
+			m_playerModel.GetComponent<Renderer>().enabled = false;
 		}
 		
-		if(m_playerPointer.renderer.enabled)
+		if(m_playerPointer.GetComponent<Renderer>().enabled)
 		{
-			m_playerPointer.renderer.enabled = false;
+			m_playerPointer.GetComponent<Renderer>().enabled = false;
 		}
 		
-		if(m_accuracyRadius.renderer.enabled)
+		if(m_accuracyRadius.GetComponent<Renderer>().enabled)
 		{
-			m_accuracyRadius.renderer.enabled = false;
+			m_accuracyRadius.GetComponent<Renderer>().enabled = false;
 		}
 	}
 }

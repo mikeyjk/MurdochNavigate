@@ -122,6 +122,7 @@ public class GoogleMap
 
 		// populate the api key (keeping it out of vcontrol)
 		TextAsset bindata = Resources.Load("apiKey") as TextAsset;
+        Debug.Log(bindata.text);
 		m_developerKey = bindata.text;
 	}
 
@@ -165,9 +166,10 @@ public class GoogleMap
 		m_queryOnStart = queryOnStart;
 		m_autoLocateCenter = autoLocateCenter;
 		
-		if (m_queryOnStart)
+		if (m_queryOnStart) {
 			generateQuery ();
-	}
+        }
+    }
 
 	public void print()
 	{
@@ -239,6 +241,7 @@ public class GoogleMap
 		}*/
 		
 		m_query = qs;
+        Debug.Log(m_query);
 		// Debug.LogError ("query is set: " + query);
 	}
 }

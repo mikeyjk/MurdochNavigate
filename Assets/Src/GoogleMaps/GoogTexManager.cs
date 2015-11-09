@@ -129,16 +129,16 @@ public class GoogTexManager : MonoBehaviour
 	{
 		if(Hide) // if hide is set to true
 		{
-			if(renderer.enabled) // if the renderer is enabled
+			if(GetComponent<Renderer>().enabled) // if the renderer is enabled
 			{
-				renderer.enabled = false; // disable the renderer
+				GetComponent<Renderer>().enabled = false; // disable the renderer
 			}
 		}
 		else if(!Hide) // hide is set to false
 		{
-			if(!renderer.enabled) // if renderer is disabled
+			if(!GetComponent<Renderer>().enabled) // if renderer is disabled
 			{
-				renderer.enabled = true; // enable it
+				GetComponent<Renderer>().enabled = true; // enable it
 			}
 		}
 
@@ -433,7 +433,7 @@ public class GoogTexManager : MonoBehaviour
 			// if non null, and loaded, and not bound, bind
 			if(m_main.m_texture != null && m_main.m_loaded && !m_main.m_bound)
 			{
-				renderer.sharedMaterial.mainTexture = m_main.m_texture; // bind texture
+				GetComponent<Renderer>().sharedMaterial.mainTexture = m_main.m_texture; // bind texture
 
 				m_main.m_bound = true; // flag as bound
 
@@ -450,7 +450,7 @@ public class GoogTexManager : MonoBehaviour
 			// if non null, and loaded, and not bound, bind
 			if(m_in.m_texture != null && m_in.m_loaded && !m_in.m_bound)
 			{
-				renderer.sharedMaterial.mainTexture = m_in.m_texture; // bind zoom in texture
+				GetComponent<Renderer>().sharedMaterial.mainTexture = m_in.m_texture; // bind zoom in texture
 				m_in.m_bound = true; // zoomed in texture is bound
 				Debug.Log("Zoom in tex bound.");
 				
@@ -481,7 +481,7 @@ public class GoogTexManager : MonoBehaviour
 			// if non null, and loaded, and not bound, bind
 			if(m_out.m_texture != null && m_out.m_loaded && !m_out.m_bound)
 			{
-				renderer.sharedMaterial.mainTexture = m_out.m_texture; // bind zoom in texture
+				GetComponent<Renderer>().sharedMaterial.mainTexture = m_out.m_texture; // bind zoom in texture
 				m_out.m_bound = true; // zoomed out texture is bound
 				Debug.Log("Zoom out tex bound.");
 				
@@ -509,7 +509,7 @@ public class GoogTexManager : MonoBehaviour
 			// if non null, and loaded, and not bound, bind
 			if(m_left.m_texture != null && m_left.m_loaded && !m_left.m_bound) // if texture is actually able to be loaded
 			{
-				renderer.sharedMaterial.mainTexture = m_left.m_texture; // bind zoom in texture
+				GetComponent<Renderer>().sharedMaterial.mainTexture = m_left.m_texture; // bind zoom in texture
 				m_left.m_bound = true; // zoomed in texture is bound
 				Debug.Log("Left tex bound.");
 				
@@ -536,7 +536,7 @@ public class GoogTexManager : MonoBehaviour
 			// if non null, and loaded, and not bound, bind
 			if(m_right.m_texture != null && m_right.m_loaded && !m_right.m_bound) // if texture is actually able to be loaded
 			{
-				renderer.sharedMaterial.mainTexture = m_right.m_texture; // bind zoom in texture
+				GetComponent<Renderer>().sharedMaterial.mainTexture = m_right.m_texture; // bind zoom in texture
 				m_right.m_bound = true; // zoomed in texture is bound
 				Debug.Log("Right tex bound.");
 				
@@ -563,7 +563,7 @@ public class GoogTexManager : MonoBehaviour
 			// if non null, and loaded, and not bound, bind
 			if(m_up.m_texture != null && m_up.m_loaded && !m_up.m_bound) // if texture is actually able to be loaded
 			{
-				renderer.sharedMaterial.mainTexture = m_up.m_texture; // bind zoom in texture
+				GetComponent<Renderer>().sharedMaterial.mainTexture = m_up.m_texture; // bind zoom in texture
 				m_up.m_bound = true; // zoomed in texture is bound
 				Debug.Log("Up tex bound.");
 				
@@ -590,7 +590,7 @@ public class GoogTexManager : MonoBehaviour
 			// if non null, and loaded, and not bound, bind
 			if(m_down.m_texture != null && m_down.m_loaded && !m_down.m_bound) // if texture is actually able to be loaded
 			{
-				renderer.sharedMaterial.mainTexture = m_down.m_texture; // bind zoom in texture
+				GetComponent<Renderer>().sharedMaterial.mainTexture = m_down.m_texture; // bind zoom in texture
 				m_down.m_bound = true; // zoomed in texture is bound
 				Debug.Log("Down tex bound.");
 				

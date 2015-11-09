@@ -104,15 +104,15 @@ public class Touch : MonoBehaviour
 					
 					float deltaMagnitudediff = prevTouchDeltaMag - touchDeltaMag;
 					
-					if (camera.isOrthoGraphic) 
+					if (GetComponent<Camera>().orthographic) 
 					{
-						camera.orthographicSize += deltaMagnitudediff + orthoZoomSpeed;
-						camera.orthographicSize = Mathf.Max (camera.orthographicSize, .1f);
+						GetComponent<Camera>().orthographicSize += deltaMagnitudediff + orthoZoomSpeed;
+						GetComponent<Camera>().orthographicSize = Mathf.Max (GetComponent<Camera>().orthographicSize, .1f);
 					} 
 					else 
 					{
-						camera.fieldOfView += deltaMagnitudediff * perspectiveZoomSpeed;
-						camera.fieldOfView = Mathf.Clamp (camera.fieldOfView, 10.0f, 100f);
+						GetComponent<Camera>().fieldOfView += deltaMagnitudediff * perspectiveZoomSpeed;
+						GetComponent<Camera>().fieldOfView = Mathf.Clamp (GetComponent<Camera>().fieldOfView, 10.0f, 100f);
 					}
 				}
 			}
@@ -280,15 +280,15 @@ public class Touch : MonoBehaviour
 				
 				float deltaMagnitudediff = prevTouchDeltaMag - touchDeltaMag;
 				
-				if (camera.isOrthoGraphic) 
+				if (GetComponent<Camera>().orthographic) 
 				{
-					camera.orthographicSize += deltaMagnitudediff + orthoZoomSpeed;
-					camera.orthographicSize = Mathf.Max (camera.orthographicSize, .1f);
+					GetComponent<Camera>().orthographicSize += deltaMagnitudediff + orthoZoomSpeed;
+					GetComponent<Camera>().orthographicSize = Mathf.Max (GetComponent<Camera>().orthographicSize, .1f);
 				} 
 				else 
 				{
-					camera.fieldOfView += deltaMagnitudediff * perspectiveZoomSpeed;
-					camera.fieldOfView = Mathf.Clamp (camera.fieldOfView, 10.0f, 100.0f);
+					GetComponent<Camera>().fieldOfView += deltaMagnitudediff * perspectiveZoomSpeed;
+					GetComponent<Camera>().fieldOfView = Mathf.Clamp (GetComponent<Camera>().fieldOfView, 10.0f, 100.0f);
 				}
 			}
 		}
@@ -331,15 +331,15 @@ public class Touch : MonoBehaviour
 					
 					float deltaMagnitudediff = prevTouchDeltaMag - touchDeltaMag;
 					
-					if (camera.isOrthoGraphic) 
+					if (GetComponent<Camera>().orthographic) 
 					{
-						camera.orthographicSize += deltaMagnitudediff + orthoZoomSpeed;
-						camera.orthographicSize = Mathf.Max (camera.orthographicSize, .1f);
+						GetComponent<Camera>().orthographicSize += deltaMagnitudediff + orthoZoomSpeed;
+						GetComponent<Camera>().orthographicSize = Mathf.Max (GetComponent<Camera>().orthographicSize, .1f);
 					} 
 					else 
 					{
-						camera.fieldOfView += deltaMagnitudediff * perspectiveZoomSpeed;
-						camera.fieldOfView = Mathf.Clamp (camera.fieldOfView, 10.0f, 100.0f);
+						GetComponent<Camera>().fieldOfView += deltaMagnitudediff * perspectiveZoomSpeed;
+						GetComponent<Camera>().fieldOfView = Mathf.Clamp (GetComponent<Camera>().fieldOfView, 10.0f, 100.0f);
 					}
 				}
 			}

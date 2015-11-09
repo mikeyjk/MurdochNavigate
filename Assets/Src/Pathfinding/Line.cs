@@ -37,7 +37,7 @@ public class Line
 		// fill line renderer with data
 		m_objectContainer = new GameObject("navline"); // un documented quirk line renderer must be attached to a game object
 		m_line = m_objectContainer.AddComponent<LineRenderer>(); // instantiate line renderer class
-		m_line.renderer.material = new Material(Shader.Find("Transparent/VertexLit"));
+		m_line.GetComponent<Renderer>().material = new Material(Shader.Find("Transparent/VertexLit"));
 
 		setColor(new Color(Color.green.r, Color.green.g, Color.green.b, 0.55f), Color.green);
 		setWidth(0f, 0f);
@@ -50,7 +50,7 @@ public class Line
 
 	public void setColor(Color startColor, Color endColor)
 	{
-		m_line.renderer.material.color = startColor;
+		m_line.GetComponent<Renderer>().material.color = startColor;
 		m_line.SetColors(startColor, endColor);
 	}
 

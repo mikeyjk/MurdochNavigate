@@ -37,10 +37,10 @@ public class GUIScale : MonoBehaviour
 	 * */
 	void OnGUI() 
 	{
-		m_textureHeight = guiTexture.texture.height;
-		m_textureWidth = guiTexture.texture.width;
+		m_textureHeight = GetComponent<GUITexture>().texture.height;
+		m_textureWidth = GetComponent<GUITexture>().texture.width;
 
-		var texturePixel = guiTexture.pixelInset;
+		var texturePixel = GetComponent<GUITexture>().pixelInset;
 
 		// center is the middle of the screen
 		texturePixel.center = new Vector2(m_screenWidth/2, m_screenHeight/2);
@@ -61,20 +61,20 @@ public class GUIScale : MonoBehaviour
 			texturePixel.height /= 2f;
 		}
 
-		guiTexture.pixelInset = texturePixel;
+		GetComponent<GUITexture>().pixelInset = texturePixel;
 
 		if(Draw) // if draw is enabled
 		{
-			if(!guiTexture.enabled) // if guitexture is not enabled
+			if(!GetComponent<GUITexture>().enabled) // if guitexture is not enabled
 			{
-				guiTexture.enabled = !guiTexture.enabled; // enable guitexture
+				GetComponent<GUITexture>().enabled = !GetComponent<GUITexture>().enabled; // enable guitexture
 			}
 		}
 		else // draw is not enabled
 		{
-			if(guiTexture.enabled) // if guitexture is enabled
+			if(GetComponent<GUITexture>().enabled) // if guitexture is enabled
 			{
-				guiTexture.enabled = !guiTexture.enabled; // disable it
+				GetComponent<GUITexture>().enabled = !GetComponent<GUITexture>().enabled; // disable it
 			}
 		}
 	}
