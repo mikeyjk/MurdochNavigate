@@ -165,32 +165,12 @@ public class SceneManager : MonoBehaviour
 		m_buildings = m_fileLoader.m_buildings;
 		m_services = m_fileLoader.m_services;
 		m_other = m_fileLoader.m_others;
-
-		// read services data from file
-		for(int service = 0; service < m_services.Count; ++service)
+		
+		for(int building = 0; building < m_buildings.Count; ++building) // for buildings
 		{
-			// add entry to the menu
-			m_menu.menuOptions.Add(m_services[service].m_name);
-		}
-
-		// read other data from file
-		for(int other = 0; other < m_other.Count; ++other)
-		{
-			// add entry to the menu
-			m_menu.menuOptions.Add(m_other[other].m_name);
-		}
-
-		// read building data from file
-		for(int building = 0; building < m_buildings.Count; ++building)
-		{
-			// add entry to the menu
-			m_menu.menuOptions.Add(m_buildings[building].m_name);
-
-			// load model data
-			for(int model = 0; model < m_buildings[building].m_models.Count; ++model)
+			for(int model = 0; model < m_buildings[building].m_models.Count; ++model) // for models in buildings
 			{
-				// if no texture path is available
-				if(String.IsNullOrEmpty(m_buildings[building].m_models[model].m_texPath))
+				if(String.IsNullOrEmpty(m_buildings[building].m_models[model].m_texPath)) // if no texture path is available
 				{
 					int ind = insertModel(m_buildings[building].m_name, m_buildings[building].m_models[model].m_path, "");
 					m_modelManager.positionModel(ind, m_buildings[building].m_models[model].m_position);
@@ -207,6 +187,7 @@ public class SceneManager : MonoBehaviour
 			}
 		}
 	}
+
 
 	/**
 	 * @Function: Update().
@@ -398,8 +379,8 @@ public class SceneManager : MonoBehaviour
 			try
 			{
 				// define the center latitude and longitude
-				double[] latLong = new double[2]{m_textureHandler.m_main.m_webQuery.m_latitude, 
-					m_textureHandler.m_main.m_webQuery.m_longitude};
+				LatLong latLong = new LatLong(m_textureHandler.m_main.m_webQuery.m_latitude, 
+					m_textureHandler.m_main.m_webQuery.m_longitude);
 				
 				// the zoom of the map
 				int zoom = m_textureHandler.m_main.m_webQuery.m_zoom;
@@ -478,45 +459,45 @@ public class SceneManager : MonoBehaviour
 	{
 		if(!m_forgeGPS) // user is really on campus
 		{
-			double[] latLongPlus = m_userLocation.getLocationPlus(); // get horiz accuracy + lat/long
-			double[] latLong = m_userLocation.getLocation(); // get lat / long
+			LatLong latLong = m_userLocation.getLocation(); // get lat / long
 			Vector3 playerPos = m_mercator.latLongToWorld(latLong); // convert lat/long to world coord
 
-			if(latLongPlus[0] != lastTime) // if user's lat/long has been updated
+
+			if(latLong.m_timestamp != lastTime) // if user's lat/long has been updated
 			{
 				// m_playerMarker.setRadius(latLongPlus[1]); // update player markers horizontal radius
 
-				if(m_mercator.inRange(latLong)) // if user's lat/long is within the map
-				{
-					m_playerMarker.m_enabled = true; // show the player marker 
-					m_menu.m_showMenu = true; // show the navigate menu
-					m_guiHandler.m_outsideCampus = false; // gps is not outside of campus
-					
-					NavMeshPath updatePath = new NavMeshPath(); 
-					m_playerNavAgent.CalculatePath(playerPos, updatePath); // calculate if navagent can get there
-					
-					// if nav agent can't get there
-					if(updatePath.status == NavMeshPathStatus.PathInvalid || updatePath.status == NavMeshPathStatus.PathPartial)
+					if(m_mercator.inRange(latLong)) // if user's lat/long is within the map
 					{
-						m_playerNavAgent.ResetPath(); // stop nav agent from handling it
-						m_playerNavAgent.transform.position = playerPos; // get as close as we can
+						m_playerMarker.m_enabled = true; // show the player marker 
+						m_menu.m_showMenu = true; // show the navigate menu
+						m_guiHandler.m_outsideCampus = false; // gps is not outside of campus
+						
+						NavMeshPath updatePath = new NavMeshPath(); 
+						m_playerNavAgent.CalculatePath(playerPos, updatePath); // calculate if navagent can get there
+						
+						// if nav agent can't get there
+						if(updatePath.status == NavMeshPathStatus.PathInvalid || updatePath.status == NavMeshPathStatus.PathPartial)
+						{
+							m_playerNavAgent.ResetPath(); // stop nav agent from handling it
+							m_playerNavAgent.transform.position = playerPos; // get as close as we can
+						}
+						else // path complete
+						{
+							m_playerNavAgent.destination = playerPos; // else let nav agent handle it
+						}
+						
+						lastTime = latLong.m_timestamp; // update last GPS timestamp
 					}
-					else // path complete
+					else // lat and long aren't in range
 					{
-						m_playerNavAgent.destination = playerPos; // else let nav agent handle it
+						m_playerMarker.m_enabled = false; // show the player marker 
+						m_menu.m_showMenu = true; // show the navigate menu
+						m_guiHandler.m_outsideCampus = false; // gps is not outside of campus
+						m_menu.m_showMenu = false; // hide the navigate menu
+						m_playerMarker.m_enabled = false; // hide the player marker
+						m_guiHandler.m_outsideCampus = true; // gps is out of range
 					}
-					
-					lastTime = latLongPlus[0]; // update last GPS timestamp
-				}
-				else // lat and long aren't in range
-				{
-					m_playerMarker.m_enabled = false; // show the player marker 
-					m_menu.m_showMenu = true; // show the navigate menu
-					m_guiHandler.m_outsideCampus = false; // gps is not outside of campus
-					m_menu.m_showMenu = false; // hide the navigate menu
-					m_playerMarker.m_enabled = false; // hide the player marker
-					m_guiHandler.m_outsideCampus = true; // gps is out of range
-				}
 			}
 		}
 		else // user is not on campus but we are them for debugging purposes
@@ -529,6 +510,7 @@ public class SceneManager : MonoBehaviour
 
 		navline(); // update the navigation line
 	}
+
 
 	/**
 	 * @Function: loadingMap.
@@ -700,7 +682,6 @@ public class SceneManager : MonoBehaviour
 		panUp(); // pan map up if needed
 		panDown(); // pan map down if needed
 	}
-
 void zoomIn()
 {
 	/**
@@ -718,7 +699,6 @@ void zoomIn()
 			Vector3 temp = m_mainCamera.transform.position;
 			temp.y = 25;
 			m_mainCamera.transform.position = temp;
-
 			m_textureHandler.loadZoomIn(); // contex is the zoom out texture
 			
 			m_textureHandler.bindTex(); // bind zoomed out texture

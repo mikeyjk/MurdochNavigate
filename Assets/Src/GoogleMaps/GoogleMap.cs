@@ -41,10 +41,12 @@ using System.Runtime.Serialization;
 [System.Serializable]
 public class GoogleMap
 {
+
 	// api key
 	static private string m_keyLocation = "StaticMap/developer_key";
+  [SerializeField]
 	static private string m_developerKey = "";
-	
+
 	// query server
 	static private string m_queryServer = "http://maps.googleapis.com/maps/api/staticmap";
 

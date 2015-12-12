@@ -14,7 +14,7 @@ public class GetCorners : MonoBehaviour
 	private Vector3 m_bottomRight;
 
 	public List<Vector3> m_worldArea; // all the world coordinates within
-	public List<double[]> m_latLongArea; // all the latitude and longitudes within
+	public List<LatLong> m_latLongArea; // all the latitude and longitudes within
 	/**
 	 * @Function: worldToLatLong().
 	 * @Summary: calculate the lat and long of the pathways.
