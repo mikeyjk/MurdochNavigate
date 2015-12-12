@@ -20,7 +20,7 @@ public class Model
 	public Texture m_texture; // model texture object
 	public string m_texPath; // file path to texture
 	
-	public double[] m_latLong; // latitude and longitude of the model (x and z axis)
+	public LatLong m_latLong; // latitude and longitude of the model (x and z axis)
 	public float m_yVal; // the y position/ height location (used in cojunction with m_latLong
 	
 	public Vector3 m_position; // model position in world
@@ -44,7 +44,7 @@ public class Model
 	public Model()
 	{
 		m_model = new GameObject();
-		m_latLong = new double[2]{0d, 0d};
+		m_latLong = new LatLong(0d, 0d);
 		m_id = -1;
 		m_name = "";
 		m_texture = new Texture();

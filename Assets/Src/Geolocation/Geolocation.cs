@@ -183,51 +183,26 @@ public class Geolocation : MonoBehaviour
 	 * Returns the users latitude and longitude as a double array.
 	 * If the data isn't available, a double array of {0, 0} is returned.
 	 * */
-	public double[] getLocation()
+	public LatLong getLocation()
 	{
 		if(m_gpsInitialising || Failed) // not ready or failed
 		{
-			return(new double[]{0d, 0d}); // so we send back 0, 0
+			return(new LatLong(0d, 0d, 0d, 0d)); // so we send back 0, 0
 		}
 		else // check the latitude and longitude
 		{
-			double[] latLong = new double[2] // store lat long
-			{
-				(double)Input.location.lastData.latitude, 
-				(double)Input.location.lastData.longitude
-			};
-
-			return(latLong); // return the latitude and longitude
-		}
-	}
-
-	/**
-	 * @Function: getLocationPlus().
-	 * @Summary:
-	 * {0} = horizontal accuracy
-	 * {1} = latitude
-	 * {2} = longitude
-	 * 
-	 * */
-	public double[] getLocationPlus()
-	{
-		if(m_gpsInitialising || Failed) // not ready or failed
-		{
-			return(new double[]{0d, 0d, 0d, 0d}); // so we send back 0, 0, 0
-		}
-		else // check the latitude and longitude
-		{
-			double[] latLong = new double[4] // store accuracy and lat long
-			{
+			LatLong latLong = new LatLong // store lat long
+			(
 				(double)Input.location.lastData.timestamp,
 				(double)Input.location.lastData.horizontalAccuracy, 
 				(double)Input.location.lastData.latitude, 
 				(double)Input.location.lastData.longitude
-			};
+			);
 
 			return(latLong); // return the latitude and longitude
 		}
 	}
+
 
 	/**
 	 * @Function: locationInitialising().

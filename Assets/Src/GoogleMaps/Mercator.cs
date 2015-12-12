@@ -60,7 +60,7 @@ public class Mercator
 	 * 	new Mercator object should be constructed.
 	 * 
 	 * */
-	public Mercator(double[] latLong, int zoom, float planeWidth)
+	public Mercator(LatLong latLong, int zoom, float planeWidth)
 	{
 		m_zoom = zoom;
 		m_originGoogTile = latLongToGoogTile(latLong);
@@ -72,11 +72,11 @@ public class Mercator
 	}
 
 	// "Converts given lat/lon in WGS84 Datum to XY in Spherical Mercator EPSG:900913"
-	public double[] latLongToMetres(double[] latLong)
+	public double[] latLongToMetres(LatLong latLong)
 	{
 		double[] metres = new double[2];
-		metres[0] = latLong[1] * m_originShift / 180.0d;
-		metres[1] = Math.Log(Math.Tan((90d + latLong[0]) * Math.PI / 360.0d )) / (Math.PI / 180.0d);
+		metres[0] = latLong.m_longitude * m_originShift / 180.0d;
+		metres[1] = Math.Log(Math.Tan((90d + latLong.m_latitude) * Math.PI / 360.0d )) / (Math.PI / 180.0d);
 		metres[1] = metres[1] * m_originShift / 180.0d;
 		//Debug.Log("latLongToMetres.");
 		//Debug.Log("\tmetres: " + metres[0] + ", " + metres[1]);
@@ -130,7 +130,7 @@ public class Mercator
 	// This must be called every time the center of the map is altered
 	// it is used for all calculations this class uses and is absolutely critical
 	// # coordinate origin is moved from bottom-left to top-left corner of the extent
-	private int[] latLongToGoogTile(double[] latLong)
+	private int[] latLongToGoogTile(LatLong latLong)
 	{
 		double[] metres = latLongToMetres(latLong);
 
@@ -177,10 +177,10 @@ public class Mercator
 	 * Note that the pixel coordinates are tied to the entire map, not to the map section currently in view.
 	 * DOESN'T NEED GLOBAL TILE
 	 * */
-	private double[] latLongToPixel(double[] latLong)
+	private double[] latLongToPixel(LatLong latLong)
 	{
-		double lat = latLong[0];
-		double lng = latLong[1];
+		double lat = latLong.m_latitude;
+		double lng = latLong.m_longitude;
 
 		long cbk = PixVal[m_zoom];
 		
@@ -212,14 +212,15 @@ public class Mercator
 	 * Note that the pixel coordinates are tied to the entire map, not to the map
 	 * section currently in view.
 	*/
-	private double[] pixelToLatLong(double[] pixel)
+	private LatLong pixelToLatLong(double[] pixel)
 	{
 		long foo = PixVal[m_zoom];
 		double lng = (pixel[0] - foo) / CEK[m_zoom];
 		double bar = (pixel[1] - foo) / -CFK[m_zoom];
 		double blam = 2d * Math.Atan(Math.Exp(bar)) - Math.PI / 2d;
 		double lat = blam / (Math.PI / 180d);
-		return(new double[]{lat, lng});
+		LatLong outObject = new LatLong(lat, lng);
+		return(outObject);
 	}
 
 	/**
@@ -229,12 +230,12 @@ public class Mercator
 	 * Note that the pixel coordinates are tied to the entire map, not to the map
 	 * section currently in view.
 	*/
-	private double[] latLngToTile(double[] latLng)
+	private double[] latLngToTile(LatLong latLng)
 	{
 		double offset = (256d * Math.Pow(2d, (m_zoom - 1d))) - (256d * Math.Pow (2d, (m_zoom - 1d))) 
-			/ Math.PI * Math.Log((1d + Math.Sin(latLng[0] * Math.PI / 180d)) / (1d - Math.Sin(latLng[0] * Math.PI / 180d))) / 2d;
+			/ Math.PI * Math.Log((1d + Math.Sin(latLng.m_latitude * Math.PI / 180d)) / (1d - Math.Sin(latLng.m_latitude * Math.PI / 180d))) / 2d;
 
-		double circley = offset - 256d * latLng[1];
+		double circley = offset - 256d * latLng.m_longitude;
 		return(new double[]{offset, circley});
 	}
 
@@ -242,16 +243,16 @@ public class Mercator
 	 * @Function: latLngToWorld().
 	 * @Summary: converts lat lng into the tile coordinate. I think.
 	 * */
-	private double[] latLngToWorld(double[] latLng) 
+	private double[] latLngToWorld(LatLong latLng) 
 	{
 		double[] point = new double[2];
 		double[] origin = m_pixelOrigin;
 		
-		point[0] = origin[0] + latLng[1] * m_pixelsPerLonDegree;
+		point[0] = origin[0] + latLng.m_longitude * m_pixelsPerLonDegree;
 		
 		// Truncating to 0.9999 effectively limits latitude to 89.189. This is
 		// about a third of a tile past the edge of the world tile.
-		double siny = bound(Math.Sin(degreesToRadians(latLng[0])), -0.9999, 0.9999);
+		double siny = bound(Math.Sin(degreesToRadians(latLng.m_latitude)), -0.9999, 0.9999);
 		point[1] = origin[1] + 0.5d * Math.Log((1d + siny) / (1d - siny)) * -m_pixelsPerLonRadian;
 		return point;
 	}
@@ -387,7 +388,7 @@ public class Mercator
 		Debug.Log(String.Format("playerLocalPixel: {0}, {1}.", playerLocalPixel[0], playerLocalPixel[1]));
 		Debug.Log(String.Format("playerWorld: {0}, {1}.", playerWorld[0], playerWorld[1]));
 	 */
-	public Vector3 latLongToWorld(double[] latLong)
+	public Vector3 latLongToWorld(LatLong latLong)
 	{
 		double[] playerGlobalPixel = latLongToPixel(latLong); // doesn't need globe tile
 		double[] playerLocalPixel = globalPixelToLocal(playerGlobalPixel); // needs global tile
@@ -406,7 +407,7 @@ public class Mercator
 		double[] playerGlobalPixel = localPixelToGlobal(playerWorldToPixel, playerTile);
 	 * 
 	 * */
-	public double[] worldToLatLong(Vector3 world)
+	public LatLong worldToLatLong(Vector3 world)
 	{
 		double[] playerWorldToPixel = WorldToLocalPixel(world); // doesn't need global tile
 		double[] playerGlobalPixel = localPixelToGlobal(playerWorldToPixel); // needs global tile
@@ -421,7 +422,7 @@ public class Mercator
 	 * 
 	 * \TODO: Usage warning - four our purposes zoom should always be 15 really.
 	 * */
-	public bool inRange(double[] latLong)
+	public bool inRange(LatLong latLong)
 	{
 		Vector3 world = latLongToWorld(latLong); // convert lat long to world
 			
@@ -445,7 +446,7 @@ public class Mercator
 	 * 
 	 * \TODO: Usage warning - four our purposes zoom should always be 15 really.
 	 * */
-	public bool inRange(double[] latLong, float planeWidth)
+	public bool inRange(LatLong latLong, float planeWidth)
 	{
 		Vector3 world = latLongToWorld(latLong); // convert lat long to world
 		
